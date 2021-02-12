@@ -1,0 +1,31 @@
+{% extends 'indextecn.html' %}
+{% load staticfiles %}
+{% block content %}
+{% for c in clientes %}
+<link rel="stylesheet" href="{% static 'css/tecnico.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+<script src="{% static 'js/push.min.js' %}"></script>
+<body>
+        <script>
+                if('{{c.NombreCliente}}' == 'Diego Morales'){
+                Push.create('Nueva Notificacion',{
+                    body : 'Cliente Asignado: {{c.NombreCliente}}',
+                    timeout : 6000,
+                    icon : "{% static 'img/icon.png' %}",
+                    onClick: function(){
+                        this.close();
+                    }
+                })
+            }
+            </script>
+<div class="bloque">
+<br><br>
+<h2>{{c.NombreCliente}}</h2>
+<br><br>
+<a id="button" href="http://127.0.0.1:8000/orden">Registrar Orden</a>
+<br><br>
+</div>
+</body>
+<br><br>
+{% endfor %}
+{% endblock %}

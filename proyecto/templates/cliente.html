@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block content %}
+<script src="{% static 'js/region.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+<form method="POST" adtion='' enctype='multipart/form-data'>
+{% csrf_token %}
+<label>Nombre Cliente</label>
+{{form.NombreCliente}}
+<br><br>
+<label>Direccion</label>
+{{form.Direccion}}
+<br><br>
+<label>Ciudad</label>
+<select id="regiones" name="Ciudad"></select>
+<br><br>
+<label>Comuna</label>
+<select id="comunas" name="Comuna"></select>
+<br><br>
+<label>Telefono</label>
+{{form.Telefono}}
+<br><br>
+<label>Email</label>
+{{form.Email}}
+<br><br>
+<label>Tecnico Asignado</label>
+{{form.TecnicoAsignado}}
+<br><br>
+<button>Registrar</button>
+</form>
+<br><br>
+{% endblock %}

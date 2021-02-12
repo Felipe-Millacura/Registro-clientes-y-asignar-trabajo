@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tecnico.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+<div class="bloque">
+<h2>Datos de la orden</h2>
+<br>
+Nombre del Cliente = {{ordenn.NombreCliente}}
+<br><br>
+Fecha de hoy = {{ordenn.FechaHoy}}
+<br><br>
+Hora Inicio = {{ordenn.HoraInicio}} A.M
+<br><br>
+Hora Termino = {{ordenn.HoraTermino}} P.M
+<br><br>
+IDAscensor = {{ordenn.IDAscensor}}
+<br><br>
+Modelo = {{ordenn.Modelo}}
+<br><br>
+Tecnico Asignado = {{ordenn.TecnicoAsignado}}
+<br><br>
+Fallas = {{ordenn.Fallas}}
+<br><br>
+Reparaciones = {{ordenn.Reparaciones}}
+<br><br>
+Piezas Cambiadas = {{ordenn.PiezasCambiadas}}
+<br><br>
+</div>
+<br><br>
+{% endblock %}

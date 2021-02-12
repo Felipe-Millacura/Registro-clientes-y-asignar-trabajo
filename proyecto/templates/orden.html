@@ -1,0 +1,42 @@
+{% extends 'indextecn.html' %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+<link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+<form method="POST" adtion='' enctype='multipart/form-data'>
+{% csrf_token %}
+<h1>Registrar Orden</h1>
+<label>Nombre Cliente</label>
+{{form.NombreCliente}}
+<br><br>
+<label>Fecha de Hoy</label>
+<input id="date" type="date" name="FechaHoy">
+<br><br>
+<label>Hora de inicio</label>
+<input type="time" id="appt" name="HoraInicio"min="9:00" max="18:00" required>
+<br><br>
+<label>Hora de termino</label>
+<input type="time" id="appt" name="HoraTermino"min="9:00" max="18:00" required>
+<br><br>
+<label>Id del ascensor</label>
+{{form.IDAscensor}}
+<br><br>
+<label>Modelo de ascensor</label>
+{{form.Modelo}}
+<br><br>
+<label>Tecnico Asignado</label>
+{{form.TecnicoAsignado}}
+<br><br>
+<label>Fallas</label>
+<textarea rows="4" cols="50" name="Fallas"></textarea>
+<br><br>
+<label>Reparaciones</label>
+<textarea rows="4" cols="50" name="Reparaciones"></textarea>
+<br><br>
+<label>Piezas Cambiadas</label>
+<textarea rows="4" cols="50" name="PiezasCambiadas"></textarea>
+<br><br>
+<button>Registrar</button>
+</form>
+<br><br>
+{% endblock %}

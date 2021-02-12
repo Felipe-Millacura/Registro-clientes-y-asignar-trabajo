@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for a in ordenes %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/tecnico.css' %}">
+<div class="bloque">
+<h2>{{a.NombreCliente}}</h2>
+<br>
+<a id="button" href='/orden/detalle/{{a.pk}}'>Ver orden</a>
+<br><br>
+</div>
+<br><br>
+{% endfor %}
+{% endblock %}
